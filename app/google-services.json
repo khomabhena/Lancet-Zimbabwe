@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1031869457558",
+    "firebase_url": "https://lancet-zimbabwe.firebaseio.com",
+    "project_id": "lancet-zimbabwe",
+    "storage_bucket": "lancet-zimbabwe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031869457558:android:10f33234dc003029",
+        "android_client_info": {
+          "package_name": "com.kmab.lancet.zimbabwe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031869457558-qffu73v3352v4f098tkfmjdkfjfbq6pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw2MgQaupvDaauyv_OE1VFPERDptvmrLw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

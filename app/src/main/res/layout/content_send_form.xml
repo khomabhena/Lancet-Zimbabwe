@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".SendForm"
+    android:fillViewport="true"
+    tools:showIn="@layout/activity_send_form">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardPersonalDetails"
+            app:cardElevation="1dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="1px"
+                    android:layout_height="1px" />
+
+                <TextView
+                    android:id="@+id/tvDetails"
+                    android:text="Patient details"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:hint="Name"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetails"
+                    app:layout_constraintLeft_toLeftOf="@id/tvDetails"
+                    app:layout_constraintRight_toLeftOf="@id/center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etSurname"
+                    android:hint="Surname"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/etName"
+                    app:layout_constraintLeft_toRightOf="@id/center"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvDateOfBirth"
+                    android:hint="Date of Birth"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:onClick="pickDate"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/etName"
+                    app:layout_constraintLeft_toLeftOf="@id/etName"
+                    app:layout_constraintRight_toRightOf="@id/etName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etRelationship"
+                    android:hint="Relationship to Member"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/tvDateOfBirth"
+                    app:layout_constraintLeft_toRightOf="@id/center"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/llGender"
+                    android:orientation="horizontal"
+                    android:hint=""
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:inputType="textCapWords"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:minHeight="50dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/tvDateOfBirth"
+                    app:layout_constraintLeft_toLeftOf="@id/etName"
+                    app:layout_constraintRight_toRightOf="@id/etSurname"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/checkMale"
+                        android:onClick="checkGender"
+                        android:text="Male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/checkFemale"
+                        android:onClick="checkGender"
+                        android:text="Female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardMemberDetails"
+            app:cardElevation="1dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintTop_toBottomOf="@id/cardPersonalDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/center2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="1px"
+                    android:layout_height="1px" />
+
+                <TextView
+                    android:id="@+id/tvDetailsMember"
+                    android:text="Card holder details"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etMemberName"
+                    android:hint="Name"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailsMember"
+                    app:layout_constraintLeft_toLeftOf="@id/tvDetailsMember"
+                    app:layout_constraintRight_toLeftOf="@id/center2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etMemberSurname"
+                    android:hint="Surname"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/etMemberName"
+                    app:layout_constraintLeft_toRightOf="@id/center2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etMedicalAidSociety"
+                    android:hint="Medical Aid Society"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/etMemberName"
+                    app:layout_constraintLeft_toLeftOf="@id/etMemberName"
+                    app:layout_constraintRight_toRightOf="@id/etMemberName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:hint="Email"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/etMedicalAidSociety"
+                    app:layout_constraintLeft_toRightOf="@id/center2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etSuffix"
+                    android:hint="Suffix"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/etMedicalAidSociety"
+                    app:layout_constraintLeft_toLeftOf="@id/etMemberName"
+                    app:layout_constraintRight_toRightOf="@id/etMemberName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etNo"
+                    android:hint="No."
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:inputType="phone"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/etSuffix"
+                    app:layout_constraintLeft_toRightOf="@id/center2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etAddress"
+                    android:hint="Residential Address"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/etSuffix"
+                    app:layout_constraintLeft_toLeftOf="@id/etMemberName"
+                    app:layout_constraintRight_toRightOf="@id/etMemberSurname"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etEmployer"
+                    android:hint="Name of Employer"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/etAddress"
+                    app:layout_constraintLeft_toLeftOf="@id/etMemberName"
+                    app:layout_constraintRight_toRightOf="@id/etMemberName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etPhone"
+                    android:hint="Phone"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:inputType="phone"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/etEmployer"
+                    app:layout_constraintLeft_toRightOf="@id/center2"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardSpecimen"
+            app:cardElevation="1dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintTop_toBottomOf="@id/cardMemberDetails"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/center3"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_width="1px"
+                    android:layout_height="1px" />
+
+                <TextView
+                    android:id="@+id/tvSamples"
+                    android:text="Specimen Type and Tissue sample"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:orientation="horizontal"
+                    android:hint=""
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:inputType="textCapWords"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:minHeight="50dp"
+                    android:gravity="center"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintLeft_toLeftOf="@id/tvSamples"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvSamples"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/checkBlood"
+                        android:onClick="checkItem"
+                        android:text="Blood"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/checkUrine"
+                        android:onClick="checkItem"
+                        android:text="Urine"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll2"
+                    android:orientation="horizontal"
+                    android:hint=""
+                    android:textSize="16sp"
+                    android:padding="5dp"
+                    android:inputType="textCapWords"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:minHeight="50dp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintLeft_toLeftOf="@id/tvSamples"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ll1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/checkSwab"
+                        android:onClick="checkItem"
+                        android:text="Swab"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/checkFluid"
+                        android:onClick="checkItem"
+                        android:text="Fluid"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:id="@+id/checkStool"
+                        android:onClick="checkItem"
+                        android:text="Stool"
+                        android:textSize="13sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/checkOther"
+                    android:onClick="checkItem"
+                    android:text="Other"
+                    android:textSize="13sp"
+                    android:paddingEnd="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/ll2"
+                    app:layout_constraintLeft_toLeftOf="@id/tvSamples"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etOther"
+                    android:hint="Specify specimen"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toTopOf="@id/checkOther"
+                    app:layout_constraintLeft_toRightOf="@id/checkOther"
+                    app:layout_constraintRight_toRightOf="@id/ll2"
+                    app:layout_constraintBottom_toBottomOf="@id/checkOther"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+
+                <EditText
+                    android:id="@+id/etTissueSample"
+                    android:hint="Tissue sample"
+                    android:padding="8dp"
+                    android:textSize="14sp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintTop_toBottomOf="@id/checkOther"
+                    app:layout_constraintLeft_toLeftOf="@id/checkOther"
+                    app:layout_constraintRight_toRightOf="@id/etOther"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardNext"
+            android:onClick="nextStep"
+            app:cardElevation="1px"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintTop_toBottomOf="@id/cardSpecimen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:text="Next Step (1/3)"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:src="@drawable/ic_next"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="end|center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/cardNext"
+                app:layout_constraintRight_toRightOf="@id/cardNext"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

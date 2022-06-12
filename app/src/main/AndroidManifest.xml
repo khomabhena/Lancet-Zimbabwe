@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kmab.lancet.zimbabwe">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" /> <!-- <uses-feature android:name="android.hardware.camera2" /> -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".History"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Search"
+            android:label="@string/title_activity_search"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SendForm"
+            android:label="@string/title_activity_send_form"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".Details"
+            android:label="@string/title_activity_details"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Member"
+            android:label="@string/title_activity_member"
+            android:parentActivityName=".Details"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.Details" />
+        </activity>
+        <activity
+            android:name=".MedicalAid"
+            android:label="@string/title_activity_medical_aid"
+            android:parentActivityName=".Member"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.Member" />
+        </activity>
+        <activity
+            android:name=".Form"
+            android:label="@string/title_activity_form"
+            android:parentActivityName=".MedicalAid"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MedicalAid" />
+        </activity>
+        <activity
+            android:name=".SignIn"
+            android:label="@string/title_activity_sign_in"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".Admin"
+            android:label="@string/title_activity_admin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pin"
+            android:label="@string/title_activity_pin"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Messages"
+            android:label="@string/title_activity_messages"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Submissions"
+            android:label="@string/title_activity_submissions"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Timeline"
+            android:label="@string/title_activity_timeline"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MemberDetails"
+            android:label="@string/title_activity_member_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DisplayImage"
+            android:label="@string/title_activity_display_image"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Locations"
+            android:label="@string/title_activity_locations"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddLocation"
+            android:label="@string/title_activity_add_location"
+            android:parentActivityName=".Locations"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.Locations" />
+        </activity>
+        <activity
+            android:name=".Reply"
+            android:label="@string/title_activity_reply"
+            android:parentActivityName=".Submissions"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.kmab.lancet.zimbabwe.Submissions" />
+        </activity>
+    </application>
+
+</manifest>

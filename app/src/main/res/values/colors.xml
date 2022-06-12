@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#01376a</color>
+    <color name="colorPrimaryDark">#01376a</color>
+    <color name="colorAccent">#087a3b</color>
+
+    <color name="whitish">#83a9e0</color>
+    <color name="whitish2">#a2c2f1</color>
+    <color name="whitish3">#c4d5ef</color>
+
+    <color name="black">#000</color>
+    <color name="green">#009743</color>
+    <color name="ecocash">#2979FF</color>
+    <color name="yellow">#FFCB0A</color>
+    <color name="white">#fff</color>
+    <color name="gray">#fafafa</color>
+    <color name="gray_background">#f5f5f5</color>
+    <color name="line_divider">#bdbdbd</color>
+    <color name="text">#10141d</color>
+</resources>

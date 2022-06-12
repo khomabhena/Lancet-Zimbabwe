@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Admin"
+    tools:showIn="@layout/activity_admin">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constPin"
+        android:background="@drawable/gradient_pin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/tvPassCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Protect your account with a pin"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFirst"
+            android:textSize="35sp"
+            android:fontFamily="serif"
+            android:textColor="#fff"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/view1"
+            app:layout_constraintBottom_toTopOf="@id/view1"
+            app:layout_constraintRight_toRightOf="@id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="128dp"
+            android:background="#b2dfdb"
+            app:layout_constraintEnd_toStartOf="@+id/view2"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPassCode" />
+
+        <TextView
+            android:id="@+id/tvSecond"
+            android:textSize="35sp"
+            android:fontFamily="serif"
+            android:textColor="#fff"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/view2"
+            app:layout_constraintBottom_toTopOf="@id/view1"
+            app:layout_constraintRight_toRightOf="@id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvThird"
+            android:textSize="35sp"
+            android:fontFamily="serif"
+            android:textColor="#fff"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/view3"
+            app:layout_constraintBottom_toTopOf="@id/view1"
+            app:layout_constraintRight_toRightOf="@id/view3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="#b2dfdb"
+            app:layout_constraintEnd_toStartOf="@+id/view3"
+            app:layout_constraintStart_toEndOf="@+id/view1"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="#b2dfdb"
+            app:layout_constraintEnd_toStartOf="@+id/view4"
+            app:layout_constraintStart_toEndOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+
+        <TextView
+            android:id="@+id/tvForth"
+            android:textSize="35sp"
+            android:fontFamily="serif"
+            android:textColor="#fff"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/view4"
+            app:layout_constraintBottom_toTopOf="@id/view1"
+            app:layout_constraintRight_toRightOf="@id/view4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="60dp"
+            android:layout_height="2dp"
+            android:background="#b2dfdb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@id/view1" />
+
+        <TextView
+            android:id="@+id/t1"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t4"
+            app:layout_constraintEnd_toStartOf="@+id/t2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/t2"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t5"
+            app:layout_constraintEnd_toStartOf="@+id/t3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t1"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/t3"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t2"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/t4"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t7"
+            app:layout_constraintEnd_toStartOf="@+id/t5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t1" />
+
+        <TextView
+            android:id="@+id/t5"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t8"
+            app:layout_constraintEnd_toStartOf="@+id/t6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t4"
+            app:layout_constraintTop_toBottomOf="@+id/t2" />
+
+        <TextView
+            android:id="@+id/t6"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t5"
+            app:layout_constraintTop_toBottomOf="@+id/t3" />
+
+        <TextView
+            android:id="@+id/t7"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/tvCancel"
+            app:layout_constraintEnd_toStartOf="@+id/t8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t4" />
+
+        <TextView
+            android:id="@+id/t8"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/t0"
+            app:layout_constraintEnd_toStartOf="@+id/t9"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t7"
+            app:layout_constraintTop_toBottomOf="@+id/t5" />
+
+        <TextView
+            android:id="@+id/t9"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="#fff"
+            android:textSize="40sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toTopOf="@+id/tvDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t8"
+            app:layout_constraintTop_toBottomOf="@+id/t6" />
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:visibility="invisible"
+            android:onClick="resetPin"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Change"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/t0"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t7" />
+
+        <TextView
+            android:id="@+id/t0"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="OK"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvDelete"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tvCancel"
+            app:layout_constraintTop_toBottomOf="@+id/t8" />
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:onClick="pinPressed"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Delete"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:background="@drawable/pressed_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/t0"
+            app:layout_constraintTop_toBottomOf="@+id/t9" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

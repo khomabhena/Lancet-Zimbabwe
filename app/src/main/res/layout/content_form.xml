@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Form"
+    tools:showIn="@layout/activity_form">
+
+    <TextView
+        android:id="@+id/tvSelect"
+        android:textSize="13sp"
+        android:text="Click card to take a picture of your Lancet doctor's form. \n\nPlease ensure that you have completed the form with your name, address, medical aid details &amp; telephone."
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardForm"
+        android:onClick="getImageFromStorage"
+        app:cardCornerRadius="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="54dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSelect"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardNext"
+        android:layout_width="260dp"
+        android:layout_height="0dp">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:onClick="getImageFromStorage"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </android.support.v7.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="@id/cardForm"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardNext"
+        android:onClick="submitForm"
+        app:cardElevation="1px"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintTop_toBottomOf="@id/card12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp"
+            android:text="Done: Send to Lancet"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <ImageView
+            android:src="@drawable/ic_send_2"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end|center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardNext"
+            app:layout_constraintRight_toRightOf="@id/cardNext"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

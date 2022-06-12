@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:src="@drawable/logo"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:text="Lancet Laboratories Zimbabwe"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvAdmin"
+        android:textSize="17sp"
+        android:text="Admin Portal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="1px"
+        android:layout_height="1px" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardPin"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/center"
+        app:layout_constraintBottom_toTopOf="@id/cardForm"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card3"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:src="@drawable/ic_pin"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="Pin Lock"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardLogout"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1dp"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toTopOf="@id/cardPin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/center"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card2"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:src="@drawable/ic_logout"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="Logout"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu_reverse"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardAdmin"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1dp"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/center"
+        app:layout_constraintBottom_toTopOf="@id/cardPin"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card1"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:src="@drawable/ic_admin"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="Admin"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardLocations"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cardLogout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/center"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card4"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:src="@drawable/ic_pin"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="Locations"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu_reverse"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardMessages"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/center"
+        app:layout_constraintBottom_toTopOf="@id/cardAdmin"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card5"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:id="@+id/ivMessages"
+                    android:src="@drawable/ic_messages"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/tvMessages"
+                    android:visibility="gone"
+                    android:text="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="Messages"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardTimeline"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cardAdmin"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/center"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card6"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:id="@+id/ivTimeline"
+                    android:src="@drawable/ic_timeline"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:text="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvTimeline"
+                android:text="Submissions"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu_reverse"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardHistory"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/center"
+        app:layout_constraintBottom_toTopOf="@id/cardMessages"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card5a"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:id="@+id/ivHistory"
+                    android:src="@drawable/ic_history"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/tvHistory"
+                    android:visibility="gone"
+                    android:text="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:text="History"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardSearch"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="1px"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/cardTimeline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/center"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card6a"
+                app:cardElevation="1px"
+                app:cardCornerRadius="23dp"
+                android:layout_marginStart="2dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="46dp"
+                android:layout_height="46dp">
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:src="@drawable/ic_search"
+                    android:padding="12dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:text="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvSearch"
+                android:text="Search"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:paddingStart="50dp"
+                android:paddingEnd="1dp"
+                android:background="@drawable/gradient_menu_reverse"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardForm"
+        android:visibility="visible"
+        android:onClick="launchActivity"
+        app:cardCornerRadius="4dp"
+        android:background="@drawable/gradient_pin"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:cardElevation="1dp"
+        app:cardBackgroundColor="#f9f9f9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="50dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Fill and submit doctor's form"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|center_horizontal"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="50dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <ImageView
+            android:src="@drawable/ic_next_green"
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="end|center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardNext"
+            app:layout_constraintRight_toRightOf="@id/cardNext"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
